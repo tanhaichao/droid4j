@@ -1,7 +1,5 @@
 package io.leopard.droid4j.log;
 
-import org.droid4j.log.ILog;
-
 import android.util.Log;
 
 public class LogAndroidImpl implements ILog {

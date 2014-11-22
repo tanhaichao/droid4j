@@ -2,13 +2,12 @@ package io.leopard.droid4j.data.hyper;
 
 import io.leopard.burrow.httpnb.Param;
 import io.leopard.burrow.lang.Json;
+import io.leopard.droid4j.FileMap;
 import io.leopard.droid4j.data.UserSession;
 
 import java.io.File;
 import java.util.List;
 import java.util.Map;
-
-import org.droid4j.cache.FileMap;
 
 public class HyperCacheImpl extends HyperImpl {
 

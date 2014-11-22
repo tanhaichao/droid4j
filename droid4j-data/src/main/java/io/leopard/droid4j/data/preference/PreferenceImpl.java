@@ -1,11 +1,10 @@
 package io.leopard.droid4j.data.preference;
 
 import io.leopard.burrow.lang.Json;
+import io.leopard.droid4j.FileMap;
 import io.leopard.droid4j.data.UserSession;
 
 import java.io.File;
-
-import org.droid4j.cache.FileMap;
 
 public class PreferenceImpl implements Preference {
 

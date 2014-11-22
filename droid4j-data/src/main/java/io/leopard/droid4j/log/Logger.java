@@ -5,7 +5,6 @@ import io.leopard.burrow.lang.Json;
 import java.lang.reflect.Constructor;
 
 import org.apache.commons.lang.StringUtils;
-import org.droid4j.log.ILog;
 
 public class Logger {
 

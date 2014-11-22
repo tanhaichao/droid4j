@@ -1,8 +1,8 @@
 package io.leopard.droid4j.data.ioc;
 
-import java.lang.reflect.Field;
+import io.leopard.droid4j.FieldUtil;
 
-import org.droid4j.reflect.FieldUtil;
+import java.lang.reflect.Field;
 
 public abstract class AbstractInjecter {
 	public <T> T inject(T bean) {
