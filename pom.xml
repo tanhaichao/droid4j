@@ -26,10 +26,7 @@
 
 
 	<modules>
-		<module>droid4j-core</module>
 		<module>droid4j-data</module>
-		<module>droid4j-timer</module>
-		<module>droid4j-util</module>
 		<module>droid4j-redis</module>
 		<module>droid4j-sqlite</module>
 		<module>droid4j-test</module>
