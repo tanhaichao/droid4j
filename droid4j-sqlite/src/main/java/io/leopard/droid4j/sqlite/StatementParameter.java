@@ -1,6 +1,6 @@
 package io.leopard.droid4j.sqlite;
 
-import io.leopard.commons.utility.AssertUtil;
+import io.leopard.burrow.lang.AssertUtil;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

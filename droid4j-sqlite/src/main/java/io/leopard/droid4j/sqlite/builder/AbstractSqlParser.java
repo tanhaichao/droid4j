@@ -1,6 +1,6 @@
 package io.leopard.droid4j.sqlite.builder;
 
-import io.leopard.commons.utility.AssertUtil;
+import io.leopard.burrow.lang.AssertUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

@@ -1,6 +1,6 @@
 package io.leopard.droid4j;
 
-import io.leopard.commons.utility.AssertUtil;
+import io.leopard.burrow.lang.AssertUtil;
 
 import java.io.File;
 import java.io.IOException;
