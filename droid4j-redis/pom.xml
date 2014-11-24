@@ -18,5 +18,9 @@
 			<groupId>io.leopard</groupId>
 			<artifactId>burrow-lang</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 	</dependencies>
 </project>

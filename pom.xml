@@ -5,31 +5,71 @@
 	<version>0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<name>droid4j</name>
+	<description>droid4j</description>
+	<url>https://github.com/tanhaichao/droid4j</url>
+	<inceptionYear>2014</inceptionYear>
 
 	<parent>
-		<groupId>io.leopard.depend</groupId>
-		<artifactId>depend-jar</artifactId>
-		<version>0.27</version>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
 	</parent>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+	<scm>
+		<url>https://github.com/tanhaichao/droid4j</url>
+		<connection>scm:svn:https://github.com/tanhaichao/droid4j/trunk</connection>
+		<developerConnection>scm:svn:https://github.com/tanhaichao/droid4j/trunk</developerConnection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>tanhaichao</id>
+			<name>Tan Haichao</name>
+			<email>tanhaichao@gmail.com</email>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/tanhaichao/droid4j/issues</url>
+	</issueManagement>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 		<burrow.version>0.0.4-SNAPSHOT</burrow.version>
 	</properties>
 
-	<scm>
-		<url>svn://svn.leopard.io/leopard/droid4j/trunk</url>
-		<connection>scm:svn:svn://svn.leopard.io/leopard/droid4j/trunk</connection>
-		<developerConnection>scm:svn:svn://svn.leopard.io/leopard/droid4j/trunk</developerConnection>
-	</scm>
 
 
-	<modules>
-		<module>droid4j-data</module>
-		<module>droid4j-redis</module>
-		<module>droid4j-sqlite</module>
-		<module>droid4j-test</module>
-	</modules>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
 
 	<dependencyManagement>
 		<dependencies>
@@ -43,7 +83,22 @@
 				<artifactId>android</artifactId>
 				<version>4.1.1.4</version>
 			</dependency>
-
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
 			<dependency>
 				<groupId>io.leopard</groupId>
 				<artifactId>burrow-lang</artifactId>
@@ -52,24 +107,13 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<profiles>
-		<profile>
-			<activation>
-				<os>
-					<family>windows</family>
-				</os>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jar-plugin</artifactId>
-						<configuration>
-							<outputDirectory>E:/work/olla/injecter/libs</outputDirectory>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+
+
+	<modules>
+		<module>droid4j-data</module>
+		<module>droid4j-redis</module>
+		<module>droid4j-sqlite</module>
+		<module>droid4j-test</module>
+	</modules>
 </project>
+
