@@ -14,7 +14,6 @@
 
 
 	<properties>
-		<leopard.version>1.1.3-SNAPSHOT</leopard.version>
 		<burrow.version>0.0.4-SNAPSHOT</burrow.version>
 	</properties>
 
