@@ -13,10 +13,10 @@ public class Logger {
 		String logImplClassName;
 		boolean isAndroid = isAndroid();
 		if (isAndroid) {
-			logImplClassName = "org.droid4j.log.LogAndroidImpl";
+			logImplClassName = "io.leopard.droid4j.log.LogAndroidImpl";
 		}
 		else {
-			logImplClassName = "org.droid4j.log.LogSystemImpl";
+			logImplClassName = "io.leopard.droid4j.log.LogSystemImpl";
 		}
 
 		try {
