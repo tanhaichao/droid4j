@@ -26,6 +26,7 @@ import java.util.Map.Entry;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 
+
 public class HyperImpl implements Hyper {
 
 	private boolean log;
