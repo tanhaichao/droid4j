@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 
-
 public class HyperImpl implements Hyper {
 
 	private boolean log;
@@ -201,7 +200,8 @@ public class HyperImpl implements Hyper {
 
 	@Override
 	public boolean remove(Param... params) {
-		throw new NotImplementedException();
+		// throw new NotImplementedException();
+		return false;
 	}
 
 	@Override
