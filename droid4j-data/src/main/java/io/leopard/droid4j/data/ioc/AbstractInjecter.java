@@ -28,7 +28,7 @@ public abstract class AbstractInjecter {
 			return;
 		}
 		// System.out.println("inject:" + field);
-		value = this.onCreateBean(field);
+		value = this.onCreateBean(bean, field);
 
 		if (value != null) {
 			FieldUtil.set(field, bean, value);
@@ -36,7 +36,7 @@ public abstract class AbstractInjecter {
 		}
 	}
 
-	protected abstract Object onCreateBean(Field field);
+	protected abstract Object onCreateBean(Object bean, Field field);
 
 	/**
 	 * 从缓存中获取Bean.

@@ -5,18 +5,18 @@ import java.lang.reflect.Field;
 public class AutowiredInjecter extends AbstractInjecter {
 
 	@Override
-	protected Object onCreateBean(Field field) {
+	protected Object onCreateBean(Object bean, Field field) {
 		Class<?> clazz = field.getType();
-		Object bean;
+		Object result;
 		try {
-			bean = clazz.newInstance();
+			result = clazz.newInstance();
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
-		new SourceInjecter().inject(bean);
-		new AutowiredInjecter().inject(bean);
-		return bean;
+		new SourceInjecter().inject(result);
+		new AutowiredInjecter().inject(result);
+		return result;
 	}
 
 	@Override

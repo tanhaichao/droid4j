@@ -12,6 +12,11 @@ import java.util.Map;
 public class HyperCacheImpl extends HyperImpl {
 
 	private Map<String, String> data;
+	private String className;
+
+	public HyperCacheImpl(String className) {
+		this.className = className;
+	}
 
 	private Map<String, String> getData() {
 		if (data == null) {
@@ -71,6 +76,7 @@ public class HyperCacheImpl extends HyperImpl {
 
 	protected String toKey(Param... parmas) {
 		StringBuilder sb = new StringBuilder();
+		sb.append(className).append("-");
 		for (Param param : parmas) {
 			if (!param.isKey()) {
 				continue;
