@@ -44,7 +44,7 @@ public class HyperCacheImpl extends HyperImpl {
 		// FIXME ahai 未区分DAO对象.
 		String key = this.toKey(parmas);
 		String json = this.getData().get(key);
-		System.out.println("key:" + key);
+		// System.out.println("key:" + key);
 		if (json != null) {
 			return Json.toListObject(json, clazz);
 		}
