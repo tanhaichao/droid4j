@@ -41,7 +41,6 @@ public class HyperCacheImpl extends HyperImpl {
 
 	@Override
 	public <T> List<T> queryForList(String url, Class<T> clazz, Param... parmas) {
-		// FIXME ahai 未区分DAO对象.
 		String key = this.toKey(parmas);
 		String json = this.getData().get(key);
 		// System.out.println("key:" + key);
