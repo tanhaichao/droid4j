@@ -76,14 +76,14 @@ public class HyperCacheImpl extends HyperImpl {
 	protected String toKey(Param... parmas) {
 		StringBuilder sb = new StringBuilder();
 		if (!isGlobal()) {
-			sb.append(UserSession.getSessUid()).append(":");
+			sb.append(UserSession.getSessUid()).append("_");
 		}
 		sb.append(className).append("-");
 		for (Param param : parmas) {
 			if (!param.isKey()) {
 				continue;
 			}
-			sb.append(param.getValue().toString()).append(":");
+			sb.append(param.getValue().toString()).append("_");
 		}
 		return sb.toString();
 	}
