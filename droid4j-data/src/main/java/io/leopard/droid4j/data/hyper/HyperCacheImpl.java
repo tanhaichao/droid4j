@@ -4,6 +4,7 @@ import io.leopard.burrow.httpnb.Param;
 import io.leopard.burrow.lang.Json;
 import io.leopard.droid4j.FileMap;
 import io.leopard.droid4j.data.UserSession;
+import io.leopard.droid4j.log.Logger;
 
 import java.io.File;
 import java.util.List;
@@ -43,7 +44,7 @@ public class HyperCacheImpl extends HyperImpl {
 	public <T> List<T> queryForList(String url, Class<T> clazz, Param... parmas) {
 		String key = this.toKey(parmas);
 		String json = this.getData().get(key);
-		// System.out.println("key:" + key);
+		Logger.error(this, "queryForList key:" + key + " url:" + url);
 		if (json != null) {
 			return Json.toListObject(json, clazz);
 		}
