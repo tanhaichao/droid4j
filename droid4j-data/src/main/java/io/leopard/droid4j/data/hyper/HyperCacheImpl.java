@@ -86,8 +86,8 @@ public class HyperCacheImpl extends HyperImpl {
 
 	@Override
 	public boolean clean() {
-		// TODO Auto-generated method stub
-		return super.clean();
+		data.clear();
+		return true;
 	}
 
 	protected String toKey(Param... parmas) {
