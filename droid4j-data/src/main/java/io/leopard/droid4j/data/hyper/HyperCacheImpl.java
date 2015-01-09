@@ -2,6 +2,8 @@ package io.leopard.droid4j.data.hyper;
 
 import io.leopard.burrow.httpnb.Param;
 import io.leopard.burrow.lang.Json;
+import io.leopard.burrow.lang.Paging;
+import io.leopard.burrow.lang.PagingImpl;
 import io.leopard.droid4j.FileMap;
 import io.leopard.droid4j.data.UserSession;
 import io.leopard.droid4j.log.Logger;
@@ -9,6 +11,8 @@ import io.leopard.droid4j.log.Logger;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.commons.lang.NotImplementedException;
 
 public class HyperCacheImpl extends HyperImpl {
 
@@ -51,16 +55,42 @@ public class HyperCacheImpl extends HyperImpl {
 	}
 
 	@Override
-	public <T> List<T> queryForList(String url, Class<T> clazz, Param... parmas) {
-		String key = this.toKey(parmas);
+	public <T> List<T> queryForList(String url, Class<T> clazz, Param... params) {
+		String key = this.toKey(params);
 		String json = this.getData().get(key);
 		Logger.error(this, "queryForList key:" + key + " url:" + url);
 		if (json != null) {
 			return Json.toListObject(json, clazz);
 		}
-		List<T> list = super.queryForList(url, clazz, parmas);
+		List<T> list = super.queryForList(url, clazz, params);
 		this.getData().put(key, Json.toJson(list));
 		return list;
+	}
+
+	@Override
+	public <T> Paging<T> queryForPaging(String url, Class<T> clazz, Param... params) {
+		// String key = this.toKey(params);
+		// String json = this.getData().get(key);
+		// Logger.error(this, "queryForList key:" + key + " url:" + url);
+		// if (json != null) {
+		// return Json.toListObject(json, clazz);
+		// }
+		// Paging<T> paging = super.queryForPaging(url, clazz, parmas);
+		// this.getData().put(key, Json.toJson(list));
+		// return paging;
+		//
+		//
+		// String json = this.doGet(url, params);
+		// Map<String, Object> map = parseMap(json);
+		// String data = Json.toJson(map.get("data"));
+		// List<T> list = Json.toListObject(data, clazz, true);
+		// Boolean hasNextPage = (Boolean) map.get("next");
+		// if (hasNextPage == null) {
+		// throw new NullPointerException("服务器端接口没有返回next字段.");
+		// }
+		// return new PagingImpl<T>(list, hasNextPage);
+
+		throw new NotImplementedException();
 	}
 
 	@Override

@@ -149,7 +149,7 @@ public class HyperImpl implements Hyper {
 		String json = this.doGet(url, params);
 		Map<String, Object> map = parseMap(json);
 		String data = Json.toJson(map.get("data"));
-		System.out.println("json:" + json);
+		// System.out.println("json:" + json);
 		return Json.toObject(data, clazz, true);
 	}
 
