@@ -39,4 +39,11 @@ public interface Hyper {
 
 	boolean remove(Param... params);
 
+	/**
+	 * 清除一个DAO类的所有缓存数据
+	 * 
+	 * @return
+	 */
+	boolean clean();
+
 }

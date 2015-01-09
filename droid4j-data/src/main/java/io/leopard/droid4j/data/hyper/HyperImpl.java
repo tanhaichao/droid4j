@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
 
 public class HyperImpl implements Hyper {
@@ -242,6 +243,11 @@ public class HyperImpl implements Hyper {
 		catch (IOException e) {
 			throw new HttpException(e, header);
 		}
+	}
+
+	@Override
+	public boolean clean() {
+		throw new NotImplementedException();
 	}
 
 	// public static String doUpload(String url, String path) {

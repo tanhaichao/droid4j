@@ -22,9 +22,19 @@ public class HyperCacheImpl extends HyperImpl {
 	private Map<String, String> getData() {
 		if (data == null) {
 			File cacheDir = new File(UserSession.getUserDir(isGlobal()), "cache");
-			data = new FileMap(cacheDir);
+			File cacheSubDir = new File(cacheDir, this.getCacheSubDir());
+			data = new FileMap(cacheSubDir);
 		}
 		return data;
+	}
+
+	protected String getCacheSubDir() {
+		StringBuilder sb = new StringBuilder();
+		if (!isGlobal()) {
+			sb.append(UserSession.getSessUid()).append("_");
+		}
+		sb.append(className);
+		return sb.toString();
 	}
 
 	@Override
@@ -74,12 +84,15 @@ public class HyperCacheImpl extends HyperImpl {
 		return true;
 	}
 
+	@Override
+	public boolean clean() {
+		// TODO Auto-generated method stub
+		return super.clean();
+	}
+
 	protected String toKey(Param... parmas) {
 		StringBuilder sb = new StringBuilder();
-		if (!isGlobal()) {
-			sb.append(UserSession.getSessUid()).append("_");
-		}
-		sb.append(className).append("-");
+		sb.append("cache-");
 		for (Param param : parmas) {
 			if (!param.isKey()) {
 				continue;
