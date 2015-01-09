@@ -32,7 +32,7 @@ public class BeanFactory {
 
 	@SuppressWarnings("unchecked")
 	protected static <T> T instance(Class<T> clazz) {
-		System.err.println("instance:" + clazz);
+		// System.err.println("instance:" + clazz);
 		Object bean;
 		try {
 			bean = clazz.newInstance();
