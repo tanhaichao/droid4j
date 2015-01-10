@@ -17,12 +17,15 @@ public class HyperCacheImpl extends HyperImpl {
 	private Map<String, String> data;
 	private String className;
 
+	private long sessUid;
+
 	public HyperCacheImpl(String className) {
 		this.className = className;
 	}
 
 	private Map<String, String> getData() {
-		if (data == null) {
+		if (data == null || sessUid != UserSession.getSessUid()) {
+			sessUid = UserSession.getSessUid();
 			File cacheDir = new File(UserSession.getUserDir(isGlobal()), "cache");
 			File cacheSubDir = new File(cacheDir, this.getCacheSubDir());
 			data = new FileMap(cacheSubDir);
