@@ -51,6 +51,7 @@ public class SourceInjecter extends AbstractInjecter {
 
 	@Override
 	protected Object onCreateBean(Object bean, Field field) {
+		// System.err.println("onCreateBean:" + bean + " " + field);
 		Class<?> type = field.getType();
 		Source source = field.getAnnotation(Source.class);
 

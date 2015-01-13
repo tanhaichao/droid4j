@@ -1,11 +1,22 @@
 package io.leopard.droid4j.data.ioc;
 
 import io.leopard.droid4j.FieldUtil;
+import io.leopard.droid4j.data.hyper.Hyper;
 
 import java.lang.reflect.Field;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class AbstractInjecter {
+
+	private static Set<String> dataSourceType = new HashSet<String>();
+
+	static {
+		dataSourceType.add(Hyper.class.getName());
+	}
+
 	public <T> T inject(T bean) {
+
 		Field[] fields = bean.getClass().getDeclaredFields();
 		for (Field field : fields) {
 			boolean isAutowired = this.isAutowired(field);
@@ -20,12 +31,18 @@ public abstract class AbstractInjecter {
 	protected abstract boolean isAutowired(Field field);
 
 	protected void inject(Object bean, Field field) {
+		// System.err.println("inject:" + bean + " " + field);
 		field.setAccessible(true);
-		// System.out.println("inject:" + field);
-		Object value = this.getBean(field);
-		if (value != null) {
-			FieldUtil.set(field, bean, value);
-			return;
+//		System.out.println("inject:" + field.getType());
+		Class<?> fieldType = field.getType();
+
+		Object value;
+		if (!dataSourceType.contains(fieldType.getName())) {
+			value = this.getBean(field);
+			if (value != null) {
+				FieldUtil.set(field, bean, value);
+				return;
+			}
 		}
 		// System.out.println("inject:" + field);
 		value = this.onCreateBean(bean, field);

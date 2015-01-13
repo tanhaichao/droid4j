@@ -21,6 +21,7 @@ public class HyperCacheImpl extends HyperImpl {
 
 	public HyperCacheImpl(String className) {
 		this.className = className;
+		// System.err.println("className:" + className);
 	}
 
 	private Map<String, String> getData() {
@@ -59,7 +60,7 @@ public class HyperCacheImpl extends HyperImpl {
 	public <T> List<T> queryForList(String url, Class<T> clazz, Param... params) {
 		String key = this.toKey(params);
 		String json = this.getData().get(key);
-		Logger.error(this, "queryForList key:" + key + " url:" + url);
+		Logger.error(this, "queryForList key:" + className + "," + key + " url:" + url);
 		if (json != null) {
 			return Json.toListObject(json, clazz);
 		}
