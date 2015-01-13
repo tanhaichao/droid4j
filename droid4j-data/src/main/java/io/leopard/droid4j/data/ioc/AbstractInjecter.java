@@ -2,6 +2,8 @@ package io.leopard.droid4j.data.ioc;
 
 import io.leopard.droid4j.FieldUtil;
 import io.leopard.droid4j.data.hyper.Hyper;
+import io.leopard.droid4j.data.preference.Preference;
+import io.leopard.droid4j.sqlite.Sqlite;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
@@ -13,6 +15,8 @@ public abstract class AbstractInjecter {
 
 	static {
 		dataSourceType.add(Hyper.class.getName());
+		dataSourceType.add(Sqlite.class.getName());
+		dataSourceType.add(Preference.class.getName());
 	}
 
 	public <T> T inject(T bean) {
@@ -33,7 +37,7 @@ public abstract class AbstractInjecter {
 	protected void inject(Object bean, Field field) {
 		// System.err.println("inject:" + bean + " " + field);
 		field.setAccessible(true);
-//		System.out.println("inject:" + field.getType());
+		// System.out.println("inject:" + field.getType());
 		Class<?> fieldType = field.getType();
 
 		Object value;
