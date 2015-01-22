@@ -17,10 +17,6 @@
 			<artifactId>commons-io</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.leopard.burrow</groupId>
-			<artifactId>burrow-lang</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
 			<scope>provided</scope>
