@@ -1,7 +1,7 @@
 package io.leopard.droid4j.data.hyper;
 
 import io.leopard.burrow.httpnb.Https;
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

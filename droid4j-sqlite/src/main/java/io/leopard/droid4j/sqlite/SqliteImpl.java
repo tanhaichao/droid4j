@@ -1,6 +1,6 @@
 package io.leopard.droid4j.sqlite;
 
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 import io.leopard.droid4j.sqlite.builder.InsertBuilder;
 
 import java.io.IOException;

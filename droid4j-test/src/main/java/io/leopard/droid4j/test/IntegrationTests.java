@@ -1,6 +1,6 @@
 package io.leopard.droid4j.test;
 
-import io.leopard.commons.utility.StringUtil;
+import io.leopard.burrow.util.StringUtil;
 import io.leopard.droid4j.data.UserSession;
 import io.leopard.droid4j.data.ioc.AutowiredInjecter;
 import io.leopard.droid4j.sqlite.java.SqliteHelperJavaImpl;

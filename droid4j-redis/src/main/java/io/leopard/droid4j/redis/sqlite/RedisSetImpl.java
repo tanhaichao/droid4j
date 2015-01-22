@@ -1,7 +1,7 @@
 package io.leopard.droid4j.redis.sqlite;
 
-import io.leopard.commons.utility.NumberUtil;
-import io.leopard.commons.utility.SetUtil;
+import io.leopard.burrow.util.NumberUtil;
+import io.leopard.burrow.util.SetUtil;
 import io.leopard.droid4j.redis.api.IRedisSet;
 
 import java.util.ArrayList;

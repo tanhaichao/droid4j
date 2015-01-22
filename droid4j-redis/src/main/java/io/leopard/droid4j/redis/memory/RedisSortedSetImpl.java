@@ -1,7 +1,7 @@
 package io.leopard.droid4j.redis.memory;
 
 import io.leopard.burrow.lang.Json;
-import io.leopard.commons.utility.SetUtil;
+import io.leopard.burrow.util.SetUtil;
 import io.leopard.droid4j.redis.Tuple;
 import io.leopard.droid4j.redis.api.IRedisSortedSet;
 
