@@ -1,16 +1,17 @@
 package io.leopard.droid4j.data.preference;
 
-import io.leopard.burrow.lang.Json;
+import java.io.File;
+
 import io.leopard.droid4j.FileMap;
 import io.leopard.droid4j.data.UserSession;
-
-import java.io.File;
+import io.leopard.json.Json;
 
 public class PreferenceImpl implements Preference {
 
 	private FileMap map;
 
 	private boolean global;
+
 	private boolean log;
 
 	public PreferenceImpl() {

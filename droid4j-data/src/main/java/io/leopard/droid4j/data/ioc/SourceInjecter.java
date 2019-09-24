@@ -1,6 +1,7 @@
 package io.leopard.droid4j.data.ioc;
 
-import io.leopard.core.exception.UnknownException;
+import java.lang.reflect.Field;
+
 import io.leopard.droid4j.data.UserSession;
 import io.leopard.droid4j.data.hyper.Hyper;
 import io.leopard.droid4j.data.hyper.HyperCacheImpl;
@@ -9,8 +10,6 @@ import io.leopard.droid4j.data.preference.Preference;
 import io.leopard.droid4j.data.preference.PreferenceImpl;
 import io.leopard.droid4j.sqlite.Sqlite;
 import io.leopard.droid4j.sqlite.SqliteImpl;
-
-import java.lang.reflect.Field;
 
 /**
  * 数据源注入.
@@ -66,7 +65,7 @@ public class SourceInjecter extends AbstractInjecter {
 			value = this.onPreference(bean, field, source);
 		}
 		else {
-			throw new UnknownException("未知类型[" + type.getName() + "].");
+			throw new RuntimeException("未知类型[" + type.getName() + "].");
 		}
 		return value;
 	}

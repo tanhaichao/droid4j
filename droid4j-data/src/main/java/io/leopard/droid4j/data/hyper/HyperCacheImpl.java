@@ -1,20 +1,21 @@
 package io.leopard.droid4j.data.hyper;
 
-import io.leopard.burrow.httpnb.Param;
-import io.leopard.burrow.lang.Json;
-import io.leopard.burrow.lang.Paging;
-import io.leopard.burrow.lang.PagingJson;
-import io.leopard.droid4j.FileMap;
-import io.leopard.droid4j.data.UserSession;
-import io.leopard.droid4j.log.Logger;
-
 import java.io.File;
 import java.util.List;
 import java.util.Map;
 
+import io.leopard.droid4j.FileMap;
+import io.leopard.droid4j.data.UserSession;
+import io.leopard.droid4j.json.PagingJson;
+import io.leopard.droid4j.log.Logger;
+import io.leopard.httpnb.Param;
+import io.leopard.json.Json;
+import io.leopard.lang.Paging;
+
 public class HyperCacheImpl extends HyperImpl {
 
 	private Map<String, String> data;
+
 	private String className;
 
 	private long sessUid;

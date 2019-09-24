@@ -1,12 +1,12 @@
 package io.leopard.droid4j.redis.memory;
 
-import io.leopard.burrow.util.ListUtil;
-import io.leopard.droid4j.redis.api.IRedisList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import io.leopard.boot.util.ListUtil;
+import io.leopard.droid4j.redis.api.IRedisList;
 
 public class RedisListImpl implements IRedisList {
 

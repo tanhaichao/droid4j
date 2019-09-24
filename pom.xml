@@ -12,9 +12,15 @@
 
 	<parent>
 		<groupId>io.leopard.depend</groupId>
-		<artifactId>depend</artifactId>
-		<version>0.0.8</version>
+		<artifactId>depend-cloud</artifactId>
+		<version>0.9.13</version>
 	</parent>
+
+	<properties>
+		<leopard.version>0.9.13-SNAPSHOT</leopard.version>
+		<springboot.version>1.5.15.RELEASE</springboot.version>
+		<jdk.version>1.8</jdk.version>
+	</properties>
 
 	<scm>
 		<url>https://github.com/tanhaichao/droid4j</url>
@@ -27,9 +33,6 @@
 		<url>https://github.com/tanhaichao/droid4j/issues</url>
 	</issueManagement>
 
-	<properties>
-		<burrow.version>0.0.5-SNAPSHOT</burrow.version>
-	</properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -44,9 +47,19 @@
 				<version>4.1.1.4</version>
 			</dependency>
 			<dependency>
-				<groupId>io.leopard.burrow</groupId>
-				<artifactId>burrow-lang</artifactId>
-				<version>${burrow.version}</version>
+				<groupId>io.leopard.boot</groupId>
+				<artifactId>leopard-boot-jdbc</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.boot</groupId>
+				<artifactId>leopard-boot-httpnb</artifactId>
+				<version>${leopard.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.leopard.boot</groupId>
+				<artifactId>leopard-boot-lang</artifactId>
+				<version>${leopard.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -1,9 +1,9 @@
 package io.leopard.droid4j.redis.sqlite;
 
+import org.apache.commons.lang3.NotImplementedException;
+
 import io.leopard.droid4j.redis.api.IRedisString;
 import io.leopard.droid4j.sqlite.Sqlite;
-
-import org.apache.commons.lang.NotImplementedException;
 
 public class RedisStringImpl implements IRedisString {
 
@@ -54,32 +54,32 @@ public class RedisStringImpl implements IRedisString {
 
 	@Override
 	public Long incr(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long decrBy(String key, long integer) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long decr(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long incrBy(String key, long integer) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Boolean exists(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long expire(String key, int seconds) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -96,11 +96,11 @@ public class RedisStringImpl implements IRedisString {
 
 	@Override
 	public boolean flushAll() {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long setrange(String key, long offset, String value) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 }

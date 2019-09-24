@@ -1,8 +1,5 @@
 package io.leopard.droid4j.data.hyper;
 
-import io.leopard.burrow.httpnb.Https;
-import io.leopard.burrow.util.StringUtil;
-
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -18,6 +15,9 @@ import java.util.List;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLSession;
+
+import io.leopard.burrow.util.StringUtil;
+import io.leopard.httpnb.Https;
 
 public class TestClient {
 	public static void main(String[] args) {

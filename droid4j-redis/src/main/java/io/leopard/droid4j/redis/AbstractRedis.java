@@ -1,18 +1,18 @@
 package io.leopard.droid4j.redis;
 
-import io.leopard.droid4j.redis.api.IRedisHashes;
-import io.leopard.droid4j.redis.api.IRedisList;
-import io.leopard.droid4j.redis.api.IRedisSet;
-import io.leopard.droid4j.redis.api.IRedisSortedSet;
-import io.leopard.droid4j.redis.api.IRedisString;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.lang.NotImplementedException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.NotImplementedException;
+import org.apache.commons.lang3.StringUtils;
+
+import io.leopard.droid4j.redis.api.IRedisHashes;
+import io.leopard.droid4j.redis.api.IRedisList;
+import io.leopard.droid4j.redis.api.IRedisSet;
+import io.leopard.droid4j.redis.api.IRedisSortedSet;
+import io.leopard.droid4j.redis.api.IRedisString;
 
 /**
  * Redis接口内存实现.
@@ -23,9 +23,13 @@ import org.apache.commons.lang.StringUtils;
 public class AbstractRedis implements Redis {
 
 	protected IRedisString redisString;
+
 	protected IRedisHashes redisHashes;
+
 	protected IRedisSortedSet redisSortedSet;
+
 	protected IRedisSet redisSet;
+
 	protected IRedisList redisList;
 
 	@Override
@@ -73,7 +77,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public Long ttl(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -120,7 +124,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public Long zadd(String key, Map<String, Double> scoreMembers) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -150,25 +154,25 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public String type(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
 	@Override
 	public Long expireAt(String key, long unixTime) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
 	@Override
 	public Boolean setbit(String key, long offset, boolean value) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
 	@Override
 	public Boolean getbit(String key, long offset) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
@@ -222,7 +226,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public String substr(String key, int start, int end) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -397,7 +401,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public List<String> sort(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
@@ -525,7 +529,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public boolean rename(String oldkey, String newkey) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -551,7 +555,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public boolean rename(String oldkey, String newkey, int seconds) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
@@ -572,7 +576,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public boolean append(List<String> keyList, List<String> valueList, int seconds) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 
 	}
 
@@ -592,7 +596,7 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public Set<String> keys(String pattern) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -642,62 +646,62 @@ public class AbstractRedis implements Redis {
 
 	@Override
 	public String randomKey() {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long persist(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Boolean setbit(String key, long offset, String value) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long strlen(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long lpushx(String key, String... string) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long rpushx(String key, String... string) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public List<String> blpop(String arg) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public List<String> brpop(String arg) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public String echo(String string) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long move(String key, int dbIndex) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long bitcount(String key) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
 	public Long bitcount(String key, long start, long end) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 }

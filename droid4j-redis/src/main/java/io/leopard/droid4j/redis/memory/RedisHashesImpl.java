@@ -1,8 +1,5 @@
 package io.leopard.droid4j.redis.memory;
 
-import io.leopard.burrow.util.NumberUtil;
-import io.leopard.droid4j.redis.api.IRedisHashes;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -12,7 +9,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+
+import io.leopard.boot.util.NumberUtil;
+import io.leopard.droid4j.redis.api.IRedisHashes;
 
 public class RedisHashesImpl implements IRedisHashes {
 	private Map<String, Map<String, String>> data = new ConcurrentHashMap<String, Map<String, String>>();

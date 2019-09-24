@@ -1,10 +1,5 @@
 package io.leopard.droid4j.redis.sqlite;
 
-import io.leopard.burrow.lang.Json;
-import io.leopard.burrow.util.SetUtil;
-import io.leopard.droid4j.redis.Tuple;
-import io.leopard.droid4j.redis.api.IRedisSortedSet;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,7 +12,11 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
+
+import io.leopard.boot.util.SetUtil;
+import io.leopard.droid4j.redis.Tuple;
+import io.leopard.droid4j.redis.api.IRedisSortedSet;
 
 public class RedisSortedSetImpl implements IRedisSortedSet {
 
@@ -137,9 +136,10 @@ public class RedisSortedSetImpl implements IRedisSortedSet {
 
 	protected List<Map.Entry<String, Double>> list(String key) {
 		Map<String, Double> map = this.getMap(key);
-		Json.printMap(map, "mapmap");
+		// Json.printMap(map, "mapmap");
 		List<Map.Entry<String, Double>> list = new ArrayList<Map.Entry<String, Double>>(map.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
+			@Override
 			public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
 				return (int) (o1.getValue() - o2.getValue());
 			}
@@ -177,6 +177,7 @@ public class RedisSortedSetImpl implements IRedisSortedSet {
 		Map<String, Double> map = this.getMap(key);
 		List<Map.Entry<String, Double>> list = new ArrayList<Map.Entry<String, Double>>(map.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
+			@Override
 			public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
 				return (int) (o2.getValue() - o1.getValue());
 			}
@@ -405,7 +406,7 @@ public class RedisSortedSetImpl implements IRedisSortedSet {
 
 	@Override
 	public Long zinterstore(String dstkey, String... sets) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 	@Override
@@ -461,7 +462,7 @@ public class RedisSortedSetImpl implements IRedisSortedSet {
 
 	@Override
 	public Long zadd(String key, Map<Double, String> scoreMembers) {
-		throw new NotImplementedException();
+		throw new NotImplementedException("not impl.");
 	}
 
 }

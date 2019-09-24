@@ -1,10 +1,10 @@
 package io.leopard.droid4j.log;
 
-import io.leopard.burrow.lang.Json;
-
 import java.lang.reflect.Constructor;
 
 import org.apache.commons.lang.StringUtils;
+
+import io.leopard.json.Json;
 
 public class Logger {
 

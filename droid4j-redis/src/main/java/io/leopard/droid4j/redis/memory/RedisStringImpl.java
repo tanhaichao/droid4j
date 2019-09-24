@@ -1,12 +1,12 @@
 package io.leopard.droid4j.redis.memory;
 
-import io.leopard.droid4j.redis.api.IRedisString;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
+
+import io.leopard.droid4j.redis.api.IRedisString;
 
 public class RedisStringImpl implements IRedisString {
 	private Map<String, String> data = new ConcurrentHashMap<String, String>();

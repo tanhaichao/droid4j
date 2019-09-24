@@ -1,19 +1,5 @@
 package io.leopard.droid4j.data.hyper;
 
-import io.leopard.burrow.httpnb.HttpException;
-import io.leopard.burrow.httpnb.HttpHeader;
-import io.leopard.burrow.httpnb.HttpHeaderGetImpl;
-import io.leopard.burrow.httpnb.HttpHeaderPostImpl;
-import io.leopard.burrow.httpnb.HttpUpload;
-import io.leopard.burrow.httpnb.Httpnb;
-import io.leopard.burrow.httpnb.Param;
-import io.leopard.burrow.lang.Json;
-import io.leopard.burrow.lang.Paging;
-import io.leopard.burrow.lang.PagingImpl;
-import io.leopard.core.exception.StatusCodeException;
-import io.leopard.droid4j.data.UserSession;
-import io.leopard.droid4j.log.Logger;
-
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
@@ -25,6 +11,20 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
+
+import io.leopard.droid4j.data.UserSession;
+import io.leopard.droid4j.exception.StatusCodeException;
+import io.leopard.droid4j.log.Logger;
+import io.leopard.httpnb.HttpException;
+import io.leopard.httpnb.HttpHeader;
+import io.leopard.httpnb.HttpHeaderGetImpl;
+import io.leopard.httpnb.HttpHeaderPostImpl;
+import io.leopard.httpnb.HttpUpload;
+import io.leopard.httpnb.Httpnb;
+import io.leopard.httpnb.Param;
+import io.leopard.json.Json;
+import io.leopard.lang.Paging;
+import io.leopard.lang.PagingImpl;
 
 public class HyperImpl implements Hyper {
 
@@ -76,7 +76,7 @@ public class HyperImpl implements Hyper {
 		String status = (String) map.get("status");
 		if (!"200".equals(status)) {
 			String message = (String) map.get("message");
-			throw new StatusCodeException(status, message, message);
+			throw new StatusCodeException(status, message);
 		}
 		return map;
 	}
@@ -190,12 +190,15 @@ public class HyperImpl implements Hyper {
 		String json = this.doGet(url, params);
 		Map<String, Object> map = parseMap(json);
 		String data = Json.toJson(map.get("data"));
+		int size = 10;// FIXME
 		List<T> list = Json.toListObject(data, clazz, true);
 		Boolean hasNextPage = (Boolean) map.get("next");
 		if (hasNextPage == null) {
 			throw new NullPointerException("服务器端接口没有返回next字段.");
 		}
-		return new PagingImpl<T>(list, hasNextPage);
+		PagingImpl<T> paging = new PagingImpl<T>(list, size);
+		paging.setNextPage(hasNextPage);
+		return paging;
 	}
 
 	@Override
@@ -231,12 +234,16 @@ public class HyperImpl implements Hyper {
 		HttpHeader header = new HttpHeaderPostImpl(-1);
 		header.setCookie(getAndCheckLoginCookie());
 
+		List<Param> paramList = new ArrayList<Param>();
+		for (Param param : params) {
+			paramList.add(param);
+		}
 		try {
 			HttpURLConnection conn = header.openConnection(url);
 
-			HttpUpload.upload(conn, fileEntryList, params);
+			HttpUpload.upload(conn, fileEntryList, paramList);
 
-			String json = Httpnb.execute(conn);
+			String json = Httpnb.execute(conn, "UTF-8");
 			Map<String, Object> map = parseMap(json);
 			return Json.toJson(map.get("data"));
 		}

@@ -1,15 +1,15 @@
 package io.leopard.droid4j.redis.sqlite;
 
-import io.leopard.burrow.util.NumberUtil;
-import io.leopard.burrow.util.SetUtil;
-import io.leopard.droid4j.redis.api.IRedisSet;
-
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import io.leopard.boot.util.NumberUtil;
+import io.leopard.boot.util.SetUtil;
+import io.leopard.droid4j.redis.api.IRedisSet;
 
 public class RedisSetImpl implements IRedisSet {
 
